@@ -139,7 +139,18 @@ body::after{
 .grid{
     position:relative;
     z-index:2;
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0,1fr));
+    gap:10px;
 }
+/* 画面が狭いときは2列、スマホでは1列にする */
+@media (max-width:900px){
+    .grid{grid-template-columns:repeat(2, minmax(0,1fr));}
+}
+@media (max-width:600px){
+    .grid{grid-template-columns:1fr;}
+}
+
 .card{
     background:linear-gradient(145deg,rgba(30,27,43,.70),rgba(8,12,25,.62));
     border:1px solid var(--line);
@@ -400,7 +411,7 @@ body::after{
 
             <div class="card">
                 <div class="card-header">
-                     <h2>パーリ仏典の経蔵とその注釈書／複注</h2>
+                     <h2>パーリ仏典経蔵と注釈書／複注</h2>
                 </div>
                 <div class="card-body">
                     <a href="dhammapada_prerequisites.html">ダンマパダ・スッタニパータを読む前に(前提条件)</a>
